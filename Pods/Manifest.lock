@@ -8,11 +8,14 @@ PODS:
     - RxSwift (~> 4.0)
   - Result (4.0.0)
   - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
   - Moya/RxSwift
+  - RxCocoa
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -20,6 +23,7 @@ SPEC REPOS:
     - Moya
     - Result
     - RxAtomic
+    - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
@@ -27,8 +31,9 @@ SPEC CHECKSUMS:
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: fa62512018cfd8fab4a40cde4f599b6a2d5b5589
+PODFILE CHECKSUM: 18e98c31abb266db129efda8279168e7854409bd
 
 COCOAPODS: 1.6.1
