@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Country {
+struct Country: Decodable {
     let code: String
     let name: String
     let population: UInt
     let capitalName: String?
-    let neighbours: [Country]?
-    let currencyCodes: [String]?
+    let neighbours: [String]?
+    let currencies: [Currency]?
 }
