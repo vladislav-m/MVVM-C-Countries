@@ -16,6 +16,8 @@
 		524933B72254F76F00AC198C /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933B62254F76F00AC198C /* CountriesService.swift */; };
 		524933B92254F77A00AC198C /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933B82254F77A00AC198C /* CountryService.swift */; };
 		524933BC2254F82F00AC198C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933BB2254F82F00AC198C /* Country.swift */; };
+		524933C02254FF0B00AC198C /* CountryServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933BF2254FF0B00AC198C /* CountryServiceImp.swift */; };
+		524933C22254FF2100AC198C /* CountriesServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933C12254FF2100AC198C /* CountriesServiceImp.swift */; };
 		B89DF1DE935981D0E56CD514 /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FE21B71D0EC485DE855961 /* Pods_CountriesTests.framework */; };
 		FD84CAE60F3766824876021B /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9124640961302A8D51BFFE9 /* Pods_Countries.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		524933B62254F76F00AC198C /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		524933B82254F77A00AC198C /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		524933BB2254F82F00AC198C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		524933BF2254FF0B00AC198C /* CountryServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServiceImp.swift; sourceTree = "<group>"; };
+		524933C12254FF2100AC198C /* CountriesServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServiceImp.swift; sourceTree = "<group>"; };
 		A9A547281FBB2474818C8CB3 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		D9124640961302A8D51BFFE9 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8EAB2AA9E86ABFDD1E7EE6 /* Pods-CountriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.release.xcconfig"; path = "Target Support Files/Pods-CountriesTests/Pods-CountriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +121,8 @@
 		524933B32254F70800AC198C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				524933B62254F76F00AC198C /* CountriesService.swift */,
-				524933B82254F77A00AC198C /* CountryService.swift */,
+				524933C42255018100AC198C /* Countries */,
+				524933C32255016C00AC198C /* Country */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -160,9 +164,26 @@
 			isa = PBXGroup;
 			children = (
 				5249339A2253929500AC198C /* Assets.xcassets */,
-				5249339F2253929500AC198C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		524933C32255016C00AC198C /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				524933B82254F77A00AC198C /* CountryService.swift */,
+				524933BF2254FF0B00AC198C /* CountryServiceImp.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		524933C42255018100AC198C /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				524933B62254F76F00AC198C /* CountriesService.swift */,
+				524933C12254FF2100AC198C /* CountriesServiceImp.swift */,
+			);
+			path = Countries;
 			sourceTree = "<group>";
 		};
 		BA5CD837BCCFBF6229A083F9 /* Frameworks */ = {
@@ -369,8 +390,10 @@
 				524933B92254F77A00AC198C /* CountryService.swift in Sources */,
 				524933962253929300AC198C /* ViewController.swift in Sources */,
 				524933B72254F76F00AC198C /* CountriesService.swift in Sources */,
+				524933C02254FF0B00AC198C /* CountryServiceImp.swift in Sources */,
 				524933BC2254F82F00AC198C /* Country.swift in Sources */,
 				524933942253929300AC198C /* AppDelegate.swift in Sources */,
+				524933C22254FF2100AC198C /* CountriesServiceImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
