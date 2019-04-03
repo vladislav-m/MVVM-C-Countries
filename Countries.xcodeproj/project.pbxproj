@@ -156,6 +156,7 @@
 			children = (
 				524933932253929300AC198C /* AppDelegate.swift */,
 				5249339C2253929500AC198C /* LaunchScreen.storyboard */,
+				5249339F2253929500AC198C /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -557,7 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Countries/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Countries/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
