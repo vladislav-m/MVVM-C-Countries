@@ -9,6 +9,7 @@
 import Foundation
 
 struct Country {
+    let code: String
     let name: String
     let population: UInt
     let capitalName: String?
