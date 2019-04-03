@@ -8,9 +8,20 @@
 
 import RxSwift
 
+enum MappingError {
+
+}
+
 class CountryServiceImp: CountryService {
+
+    private let api: APIComponent
+
+    init(api: APIComponent) {
+        self.api = api
+    }
+
     func fetchCountry(code: String) -> Single<Country> {
-        let country = Country(code: "", name: "", population: 0, capitalName: nil, neighbours: nil, currencyCodes: nil)
-        return Observable<Country>.just(country).asSingle()
+        return self.api.getData(for: .country(code: code))
+            .map { try JSONDecoder().decode(Country.self, from: $0) }
     }
 }
