@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				524933BD2254FC6000AC198C /* Application */,
-				524933B52254F73500AC198C /* Componets Layer */,
+				524933B52254F73500AC198C /* Components Layer */,
 				524933BA2254F81D00AC198C /* Entities */,
 				524933B42254F71700AC198C /* Presentation Layer */,
 				524933BE2254FD0200AC198C /* Resources */,
@@ -132,11 +132,11 @@
 			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
-		524933B52254F73500AC198C /* Componets Layer */ = {
+		524933B52254F73500AC198C /* Components Layer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Componets Layer";
+			path = "Components Layer";
 			sourceTree = "<group>";
 		};
 		524933BA2254F81D00AC198C /* Entities */ = {
