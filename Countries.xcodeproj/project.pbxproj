@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		524933942253929300AC198C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933932253929300AC198C /* AppDelegate.swift */; };
-		524933962253929300AC198C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933952253929300AC198C /* ViewController.swift */; };
 		524933992253929400AC198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524933972253929400AC198C /* Main.storyboard */; };
 		5249339B2253929500AC198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5249339A2253929500AC198C /* Assets.xcassets */; };
 		5249339E2253929500AC198C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5249339C2253929500AC198C /* LaunchScreen.storyboard */; };
@@ -43,7 +42,6 @@
 		47CD814A44D88FB2FE4D8E17 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		524933902253929300AC198C /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524933932253929300AC198C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		524933952253929300AC198C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		524933982253929400AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5249339A2253929500AC198C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5249339D2253929500AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				524933972253929400AC198C /* Main.storyboard */,
-				524933952253929300AC198C /* ViewController.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				524933B92254F77A00AC198C /* CountryService.swift in Sources */,
-				524933962253929300AC198C /* ViewController.swift in Sources */,
 				524933C6225503C200AC198C /* APIComponent.swift in Sources */,
 				524933B72254F76F00AC198C /* CountriesService.swift in Sources */,
 				524933CF2255214D00AC198C /* Country+Codable.swift in Sources */,
