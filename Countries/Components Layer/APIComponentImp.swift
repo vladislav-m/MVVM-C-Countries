@@ -8,6 +8,7 @@
 
 import RxSwift
 import Moya
+import RxSwiftExt
 
 /// Default implementation of APIComponent protocol
 class APIComponentImp: APIComponent {
@@ -27,8 +28,11 @@ class APIComponentImp: APIComponent {
 
     func getData(for request: APIRequest) -> Single<Data> {
         return self.provider.rx.request(request)
+            .asObservable()
+            .retry(RepeatBehavior.exponentialDelayed(maxCount: 4, initial: 2.0, multiplier: 1.5))
             .subscribeOn(self.backgroundScheduler)
             .filterSuccessfulStatusAndRedirectCodes()
             .map { $0.data }
+            .asSingle()
     }
 }
