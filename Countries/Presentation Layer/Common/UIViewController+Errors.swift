@@ -6,4 +6,12 @@
 //  Copyright © 2019 Vladislav Myakotin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIViewController {
+    func display(error: Error) {
+        let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
