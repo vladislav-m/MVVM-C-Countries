@@ -13,6 +13,7 @@ import RxSwift
 class CountriesCoordinator {
     private let window: UIWindow
     private let disposeBag = DisposeBag()
+    private var navigationController: UINavigationController?
 
     init(window: UIWindow) {
         self.window = window
@@ -34,11 +35,23 @@ class CountriesCoordinator {
         let viewModel = CountriesListViewModelImp(countriesService: countriesService, countryObserver: countryObserver)
         viewController.viewModel = viewModel
 
+        self.navigationController = UINavigationController(rootViewController: viewController)
 
-        self.window.rootViewController = viewController
+
+        self.window.rootViewController = self.navigationController
     }
 
     func openCountry(code: CountryCode) {
-        
+        guard let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CountryViewController")
+            as? CountryViewController  else {
+                return
+        }
+
+        let api = APIComponentImp(provider: MoyaProvider<APIRequest>())
+        let countryService = CountryServiceImp(api: api)
+        let viewModel = CountryViewModelImp(countryCode: code, countryService: countryService)
+        viewController.viewModel = viewModel
+        self.navigationController?.pushViewController(viewController, animated: true)
+
     }
 }
