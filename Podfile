@@ -8,7 +8,8 @@ target 'Countries' do
   # Pods for Countries
 
   pod 'Moya/RxSwift'
-  
+  pod 'RxCocoa'
+  pod 'RxSwiftExt'
 
   target 'CountriesTests' do
     inherit! :search_paths

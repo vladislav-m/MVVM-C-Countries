@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		524933942253929300AC198C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933932253929300AC198C /* AppDelegate.swift */; };
-		524933962253929300AC198C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933952253929300AC198C /* ViewController.swift */; };
 		524933992253929400AC198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524933972253929400AC198C /* Main.storyboard */; };
 		5249339B2253929500AC198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5249339A2253929500AC198C /* Assets.xcassets */; };
 		5249339E2253929500AC198C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5249339C2253929500AC198C /* LaunchScreen.storyboard */; };
@@ -24,6 +23,13 @@
 		524933CD2255175E00AC198C /* APIComponentImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933CC2255175E00AC198C /* APIComponentImp.swift */; };
 		524933CF2255214D00AC198C /* Country+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933CE2255214D00AC198C /* Country+Codable.swift */; };
 		524933D1225525FF00AC198C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D0225525FF00AC198C /* Currency.swift */; };
+		524933D62255373400AC198C /* CountriesListViewModelImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D52255373400AC198C /* CountriesListViewModelImp.swift */; };
+		524933DA225539E900AC198C /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D9225539E900AC198C /* CountryCellViewModel.swift */; };
+		52DF713A2256286100AE3432 /* CountriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DF71392256286100AE3432 /* CountriesCoordinator.swift */; };
+		52DF713C22562BCE00AE3432 /* CountriesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DF713B22562BCE00AE3432 /* CountriesModule.swift */; };
+		52E6D7EC2255594B00DEBD79 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */; };
+		52E6D7EE2255DD6200DEBD79 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */; };
+		52E6D7F02255E32E00DEBD79 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */; };
 		B89DF1DE935981D0E56CD514 /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FE21B71D0EC485DE855961 /* Pods_CountriesTests.framework */; };
 		FD84CAE60F3766824876021B /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9124640961302A8D51BFFE9 /* Pods_Countries.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +49,6 @@
 		47CD814A44D88FB2FE4D8E17 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		524933902253929300AC198C /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524933932253929300AC198C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		524933952253929300AC198C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		524933982253929400AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5249339A2253929500AC198C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5249339D2253929500AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +67,13 @@
 		524933CC2255175E00AC198C /* APIComponentImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIComponentImp.swift; sourceTree = "<group>"; };
 		524933CE2255214D00AC198C /* Country+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+Codable.swift"; sourceTree = "<group>"; };
 		524933D0225525FF00AC198C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		524933D52255373400AC198C /* CountriesListViewModelImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModelImp.swift; sourceTree = "<group>"; };
+		524933D9225539E900AC198C /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
+		52DF71392256286100AE3432 /* CountriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCoordinator.swift; sourceTree = "<group>"; };
+		52DF713B22562BCE00AE3432 /* CountriesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModule.swift; sourceTree = "<group>"; };
+		52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
+		52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		A9A547281FBB2474818C8CB3 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		D9124640961302A8D51BFFE9 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8EAB2AA9E86ABFDD1E7EE6 /* Pods-CountriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.release.xcconfig"; path = "Target Support Files/Pods-CountriesTests/Pods-CountriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,8 +154,9 @@
 		524933B42254F71700AC198C /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				524933D42255371100AC198C /* CountriesList */,
 				524933972253929400AC198C /* Main.storyboard */,
-				524933952253929300AC198C /* ViewController.swift */,
+				52DF71392256286100AE3432 /* CountriesCoordinator.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -203,6 +216,19 @@
 				524933C12254FF2100AC198C /* CountriesServiceImp.swift */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		524933D42255371100AC198C /* CountriesList */ = {
+			isa = PBXGroup;
+			children = (
+				52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */,
+				52DF713B22562BCE00AE3432 /* CountriesModule.swift */,
+				524933D52255373400AC198C /* CountriesListViewModelImp.swift */,
+				524933D9225539E900AC198C /* CountryCellViewModel.swift */,
+				52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */,
+				52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */,
+			);
+			path = CountriesList;
 			sourceTree = "<group>";
 		};
 		BA5CD837BCCFBF6229A083F9 /* Frameworks */ = {
@@ -360,7 +386,9 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -370,7 +398,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -407,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				524933B92254F77A00AC198C /* CountryService.swift in Sources */,
-				524933962253929300AC198C /* ViewController.swift in Sources */,
 				524933C6225503C200AC198C /* APIComponent.swift in Sources */,
 				524933B72254F76F00AC198C /* CountriesService.swift in Sources */,
 				524933CF2255214D00AC198C /* Country+Codable.swift in Sources */,
@@ -415,9 +444,16 @@
 				524933C02254FF0B00AC198C /* CountryServiceImp.swift in Sources */,
 				524933BC2254F82F00AC198C /* Country.swift in Sources */,
 				524933D1225525FF00AC198C /* Currency.swift in Sources */,
+				52E6D7F02255E32E00DEBD79 /* CountryCell.swift in Sources */,
+				52E6D7EC2255594B00DEBD79 /* CountriesListViewController.swift in Sources */,
+				52DF713C22562BCE00AE3432 /* CountriesModule.swift in Sources */,
 				524933942253929300AC198C /* AppDelegate.swift in Sources */,
+				52DF713A2256286100AE3432 /* CountriesCoordinator.swift in Sources */,
 				524933C92255057200AC198C /* APIRequest.swift in Sources */,
+				524933DA225539E900AC198C /* CountryCellViewModel.swift in Sources */,
 				524933CB225505B500AC198C /* APIRequest+Moya.swift in Sources */,
+				524933D62255373400AC198C /* CountriesListViewModelImp.swift in Sources */,
+				52E6D7EE2255DD6200DEBD79 /* CountriesListViewModel.swift in Sources */,
 				524933C22254FF2100AC198C /* CountriesServiceImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

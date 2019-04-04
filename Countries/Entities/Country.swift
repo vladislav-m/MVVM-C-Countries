@@ -8,8 +8,10 @@
 
 import Foundation
 
+typealias CountryCode = String
+
 struct Country: Decodable {
-    let code: String
+    let code: CountryCode
     let name: String
     let population: UInt
     let capitalName: String?
