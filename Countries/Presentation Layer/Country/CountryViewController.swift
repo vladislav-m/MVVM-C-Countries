@@ -47,6 +47,10 @@ class CountryViewController: UIViewController {
         self.viewModel?.isLoading
             .drive(self.loadingIndicator.rx.isAnimating)
             .disposed(by: self.disposeBag)
+
+        self.viewModel?.errors.asObservable().subscribe(onNext: { [weak self] error in
+            self?.display(error: error)
+        }).disposed(by: self.disposeBag)
     }
 
 }
