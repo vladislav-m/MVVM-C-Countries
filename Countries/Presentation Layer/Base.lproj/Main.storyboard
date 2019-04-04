@@ -152,18 +152,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZRF-Lq-wTy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9qy-0I-dbU" firstAttribute="trailing" secondItem="KP9-wI-bGJ" secondAttribute="trailing" constant="16" id="HAi-Md-je7"/>
                             <constraint firstItem="KP9-wI-bGJ" firstAttribute="top" secondItem="9qy-0I-dbU" secondAttribute="top" constant="16" id="M6h-tq-51T"/>
+                            <constraint firstItem="ZRF-Lq-wTy" firstAttribute="leading" secondItem="JmR-UE-K1j" secondAttribute="leading" id="TEK-WB-Uvl"/>
                             <constraint firstItem="KP9-wI-bGJ" firstAttribute="leading" secondItem="9qy-0I-dbU" secondAttribute="leading" constant="16" id="fVQ-wn-o7e"/>
+                            <constraint firstAttribute="bottom" secondItem="ZRF-Lq-wTy" secondAttribute="bottom" id="nt9-TW-Skj"/>
+                            <constraint firstItem="ZRF-Lq-wTy" firstAttribute="top" secondItem="JmR-UE-K1j" secondAttribute="top" id="oZ3-ra-cKz"/>
+                            <constraint firstAttribute="trailing" secondItem="ZRF-Lq-wTy" secondAttribute="trailing" id="umc-yA-e7w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9qy-0I-dbU"/>
                     </view>
                     <connections>
                         <outlet property="capitalLabel" destination="eTP-sv-LiV" id="Zwn-y1-geR"/>
                         <outlet property="currenciesLabel" destination="BSp-ON-ikY" id="5c0-FQ-lkn"/>
+                        <outlet property="loadingIndicator" destination="ZRF-Lq-wTy" id="7Yc-hj-Z7u"/>
                         <outlet property="nameLabel" destination="z9h-Y8-5l0" id="Yuo-L6-QE2"/>
                         <outlet property="neighboursLabel" destination="eXv-kx-ii0" id="a56-h5-Y4P"/>
                         <outlet property="populationLabel" destination="rCJ-iU-e0n" id="BQ1-QR-Qou"/>

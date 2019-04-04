@@ -15,9 +15,11 @@ class CountryViewController: UIViewController {
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var neighboursLabel: UILabel!
     @IBOutlet weak var currenciesLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    private var disposeBag = DisposeBag()
 
     var viewModel: CountryViewModel?
-    private var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,15 @@ class CountryViewController: UIViewController {
             .disposed(by: self.disposeBag)
         self.viewModel?.currencies
             .drive(self.currenciesLabel.rx.text)
+            .disposed(by: self.disposeBag)
+
+        self.viewModel?.isLoading
+            .map { !$0 }
+            .drive(self.loadingIndicator.rx.isHidden)
+            .disposed(by: self.disposeBag)
+
+        self.viewModel?.isLoading
+            .drive(self.loadingIndicator.rx.isAnimating)
             .disposed(by: self.disposeBag)
     }
 

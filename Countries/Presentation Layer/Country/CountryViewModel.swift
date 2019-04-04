@@ -15,4 +15,5 @@ protocol CountryViewModel {
     var capitalName: Driver<String?> { get }
     var neighbours: Driver<String?> { get }
     var currencies: Driver<String?> { get }
+    var isLoading: Driver<Bool> { get }
 }

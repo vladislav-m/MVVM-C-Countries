@@ -20,6 +20,7 @@ class CountryViewModelImp: CountryViewModel {
     var capitalName: Driver<String?>
     var neighbours: Driver<String?>
     var currencies: Driver<String?>
+    var isLoading: Driver<Bool>
 
     init(countryCode: CountryCode, countryService: CountryService) {
         self.countryService = countryService
@@ -41,5 +42,10 @@ class CountryViewModelImp: CountryViewModel {
             .compactMap { $0.name }
             .joined(separator: ", ")
         }
+
+        self.isLoading = request.map { _ in false }
+            .asObservable()
+            .startWith(true)
+            .asDriver(onErrorJustReturn: false)
     }
 }
