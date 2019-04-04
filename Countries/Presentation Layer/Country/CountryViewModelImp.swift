@@ -11,11 +11,14 @@ import RxCocoa
 import RxSwiftExt
 
 class CountryViewModelImp: CountryViewModel {
+
+    // MARK: - Private vars
     
     private let countryService: CountryService
     private let disposeBag = DisposeBag()
 
-    var code: Driver<String>
+    // MARK: - CountryViewModel
+
     var name: Driver<String>
     var population: Driver<String>
     var capitalName: Driver<String?>
@@ -23,6 +26,8 @@ class CountryViewModelImp: CountryViewModel {
     var currencies: Driver<String?>
     var isLoading: Driver<Bool>
     var errors: Driver<Error>
+
+    // MARK: - Lifecycle
 
     init(countryCode: CountryCode, countryService: CountryService) {
         self.countryService = countryService
@@ -36,9 +41,6 @@ class CountryViewModelImp: CountryViewModel {
             .asObservable()
             .materialize()
             .share()
-        self.code = request.elements()
-            .map { $0.code }
-            .asDriver(onErrorJustReturn: defaultCountry.code)
         self.name = request.elements()
             .map { $0.name }
             .asDriver(onErrorJustReturn: defaultCountry.name)

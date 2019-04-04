@@ -11,16 +11,24 @@ import RxCocoa
 import RxSwiftExt
 
 class CountriesListViewModelImp: CountriesListViewModel, CountriesModule {
-    
+
+    // MARK: - Private vars
+
     private let countriesService: CountriesService
     private let disposeBag = DisposeBag()
 
+    // MARK: - Publica and internal vars
+
     var countryObserver: AnyObserver<CountryCode>
+
+    // MARK: - Lifecycle
 
     init(countriesService: CountriesService, countryObserver: AnyObserver<CountryCode>) {
         self.countriesService = countriesService
         self.countryObserver = countryObserver
     }
+
+    // MARK: - CountriesListViewModel
 
     func transform(input: CountriesInput) -> CountriesOutput {
         input.countrySelected.map { $0.countryCode }
@@ -43,7 +51,6 @@ class CountriesListViewModelImp: CountriesListViewModel, CountriesModule {
 
         let errors = countries.errors()
                         .asDriver(onErrorJustReturn: NSError(domain: "", code: 0, userInfo: nil))
-
 
         return CountriesOutput(countriesList: countries.elements().asDriver(onErrorJustReturn: []),
                                isLoading: isLoading,

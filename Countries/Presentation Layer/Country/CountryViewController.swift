@@ -10,6 +10,9 @@ import UIKit
 import RxSwift
 
 class CountryViewController: UIViewController {
+
+    // MARK: - Outlets
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
@@ -17,9 +20,15 @@ class CountryViewController: UIViewController {
     @IBOutlet weak var currenciesLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
+    // MARK: - Private vars
+
     private var disposeBag = DisposeBag()
 
+    // MARK: - Public and internal vars
+
     var viewModel: CountryViewModel?
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +61,4 @@ class CountryViewController: UIViewController {
             self?.display(error: error)
         }).disposed(by: self.disposeBag)
     }
-
 }

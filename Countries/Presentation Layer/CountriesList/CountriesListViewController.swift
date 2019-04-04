@@ -15,11 +15,20 @@ private typealias ItemsBinder = (_ source: Observable<[CountryCellViewModel]>)
     -> Disposable
 
 class CountriesListViewController: UIViewController {
+
+    // MARK: - Outlets
+
     @IBOutlet weak var tableView: UITableView!
+
+    // MARK: - Private vars
+
+    private let disposeBag = DisposeBag()
+
+    // MARK: - Public and internal vars
 
     var viewModel: CountriesListViewModel?
 
-    private let disposeBag = DisposeBag()
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
