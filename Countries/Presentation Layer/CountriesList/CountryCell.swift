@@ -11,10 +11,16 @@ import RxSwift
 
 class CountryCell: UITableViewCell {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
 
+    // MARK: - Private vars
+
     private let disposeBag = DisposeBag()
+
+    // MARK: - Public and internal methods
 
     func set(viewModel: CountryCellViewModel) {
         let output = viewModel.transform(input: CountryCellViewModel.Input())

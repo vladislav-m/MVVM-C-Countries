@@ -8,8 +8,8 @@
 
 import RxCocoa
 
+/// Describes ViewModel for single country info screen
 protocol CountryViewModel {
-    var code: Driver<String> { get }
     var name: Driver<String> { get }
     var population: Driver<String> { get }
     var capitalName: Driver<String?> { get }

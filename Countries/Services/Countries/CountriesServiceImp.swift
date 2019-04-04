@@ -10,12 +10,18 @@ import RxSwift
 
 class CountriesServiceImp: CountriesService {
 
+    // MARK: - Private vars
+
     private let api: APIComponent
     private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
+
+    // MARK: - Lifecycle
 
     init(api: APIComponent) {
         self.api = api
     }
+
+    // MARK: - CountriesService
 
     func countries() -> Single<[Country]> {
         return self.api.getData(for: .countriesList)

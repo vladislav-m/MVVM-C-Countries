@@ -10,25 +10,33 @@ import UIKit
 import Moya
 import RxSwift
 
+/// Responsible for UI navigation and hi-level flow
 class CountriesCoordinator {
+
+    // MARK: - Private vars
+
     private let disposeBag = DisposeBag()
     private var navigationController: UINavigationController?
 
+    // MARK: - Dependencies
+
     private let countriesService: CountriesService
     private let countryService: CountryService
+
+    // MARK: - Lifecycle
 
     init(countriesService: CountriesService, countryService: CountryService) {
         self.countriesService = countriesService
         self.countryService = countryService
     }
 
+    // MARK: - Public and internal methods
+
     func start(on window: UIWindow) {
         guard let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
             as? CountriesListViewController  else {
                 return
         }
-
-
 
         let countryObserver = AnyObserver<CountryCode> { event in
             if case let .next(countryCode) = event {
@@ -44,16 +52,14 @@ class CountriesCoordinator {
     }
 
     func openCountry(code: CountryCode) {
-        guard let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CountryViewController")
+        guard let viewController = UIStoryboard.init(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "CountryViewController")
             as? CountryViewController  else {
                 return
         }
-
-
-
+        
         let viewModel = CountryViewModelImp(countryCode: code, countryService: countryService)
         viewController.viewModel = viewModel
         self.navigationController?.pushViewController(viewController, animated: true)
-
     }
 }

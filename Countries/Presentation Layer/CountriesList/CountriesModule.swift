@@ -8,6 +8,8 @@
 
 import RxSwift
 
+/// Protocol for interactions between countries list screen and coordinator
 protocol CountriesModule {
+    /// Observer which will receive event, when some country selected on countries list screen
     var countryObserver: AnyObserver<CountryCode> { get }
 }
