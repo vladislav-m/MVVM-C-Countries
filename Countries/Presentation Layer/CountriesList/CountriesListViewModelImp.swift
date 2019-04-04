@@ -29,24 +29,23 @@ class CountriesListViewModelImp: CountriesListViewModel, CountriesModule {
 
         let countries = input.refresh
             .asObservable()
-            .startWith(()).flatMap { (Void) -> Observable<[CountryCellViewModel]> in
-                return self.countriesService.countries().map {
+            .startWith(())
+            .flatMap {
+                self.countriesService.countries().map {
                     $0.map { CountryCellViewModel(country: $0) }
-                }.asObservable().share()
-            }
+                }.asObservable().materialize()
+            }.share()
 
         let isLoading = countries.map { _ in false }
                             .asObservable()
                             .startWith(true)
                             .asDriver(onErrorJustReturn: false)
 
-        let errors = countries.asObservable()
-                        .materialize()
-                        .errors()
+        let errors = countries.errors()
                         .asDriver(onErrorJustReturn: NSError(domain: "", code: 0, userInfo: nil))
 
 
-        return CountriesOutput(countriesList: countries.asDriver(onErrorJustReturn: []),
+        return CountriesOutput(countriesList: countries.elements().asDriver(onErrorJustReturn: []),
                                isLoading: isLoading,
                                errors: errors)
     }

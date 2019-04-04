@@ -40,5 +40,9 @@ class CountriesListViewController: UIViewController {
         output?.isLoading
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: self.disposeBag)
+
+        output?.errors.asObservable().subscribe(onNext: { [weak self] error in
+            self?.display(error: error)
+        }).disposed(by: self.disposeBag)
     }
 }
