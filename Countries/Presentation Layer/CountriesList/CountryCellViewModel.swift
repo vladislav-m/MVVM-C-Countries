@@ -10,8 +10,6 @@ import RxSwift
 import RxCocoa
 
 class CountryCellViewModel {
-    private let country: Country
-
     struct Input {}
 
     struct Output {
@@ -21,6 +19,12 @@ class CountryCellViewModel {
         let capitalName: Driver<String?>
         let neighbours: Driver<String?>
         let currencies: Driver<String?>
+    }
+
+    private let country: Country
+
+    var countryCode: String {
+        return self.country.code
     }
 
     init(country: Country) {

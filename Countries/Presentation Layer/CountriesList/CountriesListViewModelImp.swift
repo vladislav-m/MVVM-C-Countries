@@ -10,19 +10,22 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 
-class CountriesListViewModelImp: CountriesListViewModel {
+class CountriesListViewModelImp: CountriesListViewModel, CountriesModule {
     
     private let countriesService: CountriesService
     private let disposeBag = DisposeBag()
 
-    init(countriesService: CountriesService) {
+    var countryObserver: AnyObserver<CountryCode>
+
+    init(countriesService: CountriesService, countryObserver: AnyObserver<CountryCode>) {
         self.countriesService = countriesService
+        self.countryObserver = countryObserver
     }
 
     func transform(input: CountriesInput) -> CountriesOutput {
-        input.countrySelected.asObservable().subscribe(onNext: { countryCellViewModel in
-
-        }).disposed(by: self.disposeBag)
+        input.countrySelected.map { $0.countryCode }
+            .drive(self.countryObserver)
+            .disposed(by: self.disposeBag)
 
         let countries = self.countriesService.countries().map {
             $0.map { CountryCellViewModel(country: $0) }

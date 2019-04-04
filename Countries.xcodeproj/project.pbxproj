@@ -25,6 +25,8 @@
 		524933D1225525FF00AC198C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D0225525FF00AC198C /* Currency.swift */; };
 		524933D62255373400AC198C /* CountriesListViewModelImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D52255373400AC198C /* CountriesListViewModelImp.swift */; };
 		524933DA225539E900AC198C /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933D9225539E900AC198C /* CountryCellViewModel.swift */; };
+		52DF713A2256286100AE3432 /* CountriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DF71392256286100AE3432 /* CountriesCoordinator.swift */; };
+		52DF713C22562BCE00AE3432 /* CountriesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DF713B22562BCE00AE3432 /* CountriesModule.swift */; };
 		52E6D7EC2255594B00DEBD79 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */; };
 		52E6D7EE2255DD6200DEBD79 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */; };
 		52E6D7F02255E32E00DEBD79 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */; };
@@ -67,6 +69,8 @@
 		524933D0225525FF00AC198C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		524933D52255373400AC198C /* CountriesListViewModelImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModelImp.swift; sourceTree = "<group>"; };
 		524933D9225539E900AC198C /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
+		52DF71392256286100AE3432 /* CountriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCoordinator.swift; sourceTree = "<group>"; };
+		52DF713B22562BCE00AE3432 /* CountriesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModule.swift; sourceTree = "<group>"; };
 		52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				524933D42255371100AC198C /* CountriesList */,
 				524933972253929400AC198C /* Main.storyboard */,
+				52DF71392256286100AE3432 /* CountriesCoordinator.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				52E6D7ED2255DD6200DEBD79 /* CountriesListViewModel.swift */,
+				52DF713B22562BCE00AE3432 /* CountriesModule.swift */,
 				524933D52255373400AC198C /* CountriesListViewModelImp.swift */,
 				524933D9225539E900AC198C /* CountryCellViewModel.swift */,
 				52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */,
@@ -440,7 +446,9 @@
 				524933D1225525FF00AC198C /* Currency.swift in Sources */,
 				52E6D7F02255E32E00DEBD79 /* CountryCell.swift in Sources */,
 				52E6D7EC2255594B00DEBD79 /* CountriesListViewController.swift in Sources */,
+				52DF713C22562BCE00AE3432 /* CountriesModule.swift in Sources */,
 				524933942253929300AC198C /* AppDelegate.swift in Sources */,
+				52DF713A2256286100AE3432 /* CountriesCoordinator.swift in Sources */,
 				524933C92255057200AC198C /* APIRequest.swift in Sources */,
 				524933DA225539E900AC198C /* CountryCellViewModel.swift in Sources */,
 				524933CB225505B500AC198C /* APIRequest+Moya.swift in Sources */,
