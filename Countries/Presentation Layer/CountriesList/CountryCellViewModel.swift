@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-class CountryCellViewModel: ViewModel {
+class CountryCellViewModel {
     private let country: Country
 
     struct Input {}

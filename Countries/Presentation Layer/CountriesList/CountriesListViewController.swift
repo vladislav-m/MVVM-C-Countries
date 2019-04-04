@@ -9,7 +9,13 @@
 import UIKit
 import RxSwift
 
+private typealias ItemsBinder = (_ source: Observable<[CountryCellViewModel]>)
+    -> (_ configureCell: @escaping (Int, CountryCellViewModel, CountryCell) -> Void)
+    -> Disposable
+
 class CountriesListViewController: UIViewController {
+
+
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel: CountriesListViewModel?
@@ -20,10 +26,12 @@ class CountriesListViewController: UIViewController {
         super.viewDidLoad()
         let countrySelected = self.tableView.rx.modelSelected(CountryCellViewModel.self).asDriver()
         let output = self.viewModel?.transform(input: CountriesInput(countrySelected: countrySelected))
-        output?.countriesList.asObservable()
-            .bind(to: self.tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { index, model, cell in
-                //                cell.set(viewModel: model)
 
+        let itemsBinder: ItemsBinder = self.tableView.rx.items(cellIdentifier: "CountryCell",
+                                                               cellType: CountryCell.self)
+        output?.countriesList.asObservable()
+            .bind(to: itemsBinder) { index, model, cell in
+                cell.set(viewModel: model)
             }.disposed(by: self.disposeBag)
     }
 }
