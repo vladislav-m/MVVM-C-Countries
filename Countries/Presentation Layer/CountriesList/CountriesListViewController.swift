@@ -8,14 +8,13 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 private typealias ItemsBinder = (_ source: Observable<[CountryCellViewModel]>)
     -> (_ configureCell: @escaping (Int, CountryCellViewModel, CountryCell) -> Void)
     -> Disposable
 
 class CountriesListViewController: UIViewController {
-
-
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel: CountriesListViewModel?
@@ -24,8 +23,12 @@ class CountriesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        self.tableView.refreshControl = refreshControl
+        refreshControl.beginRefreshing()
+
         let countrySelected = self.tableView.rx.modelSelected(CountryCellViewModel.self).asDriver()
-        let output = self.viewModel?.transform(input: CountriesInput(countrySelected: countrySelected))
+        let output = self.viewModel?.transform(input: CountriesInput(countrySelected: countrySelected, refresh: refreshControl.rx.controlEvent(.valueChanged).asDriver()))
 
         let itemsBinder: ItemsBinder = self.tableView.rx.items(cellIdentifier: "CountryCell",
                                                                cellType: CountryCell.self)
@@ -33,5 +36,9 @@ class CountriesListViewController: UIViewController {
             .bind(to: itemsBinder) { index, model, cell in
                 cell.set(viewModel: model)
             }.disposed(by: self.disposeBag)
+
+        output?.isLoading
+            .drive(refreshControl.rx.isRefreshing)
+            .disposed(by: self.disposeBag)
     }
 }

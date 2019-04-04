@@ -232,8 +232,8 @@
 				52DF713B22562BCE00AE3432 /* CountriesModule.swift */,
 				524933D52255373400AC198C /* CountriesListViewModelImp.swift */,
 				524933D9225539E900AC198C /* CountryCellViewModel.swift */,
-				52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */,
 				52E6D7EF2255E32E00DEBD79 /* CountryCell.swift */,
+				52E6D7EB2255594B00DEBD79 /* CountriesListViewController.swift */,
 			);
 			path = CountriesList;
 			sourceTree = "<group>";

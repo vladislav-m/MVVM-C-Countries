@@ -27,13 +27,17 @@ class CountriesListViewModelImp: CountriesListViewModel, CountriesModule {
             .drive(self.countryObserver)
             .disposed(by: self.disposeBag)
 
-        let countries = self.countriesService.countries().map {
-            $0.map { CountryCellViewModel(country: $0) }
-        }
+        let countries = input.refresh
+            .asObservable()
+            .startWith(()).flatMap { (Void) -> Observable<[CountryCellViewModel]> in
+                return self.countriesService.countries().map {
+                    $0.map { CountryCellViewModel(country: $0) }
+                }.asObservable().share()
+            }
 
         let isLoading = countries.map { _ in false }
                             .asObservable()
-                            .startWith(false)
+                            .startWith(true)
                             .asDriver(onErrorJustReturn: false)
 
         let errors = countries.asObservable()

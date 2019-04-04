@@ -10,6 +10,7 @@ import RxCocoa
 
 struct CountriesInput {
     let countrySelected: Driver<CountryCellViewModel>
+    let refresh: Driver<Void>
 }
 
 struct CountriesOutput {
