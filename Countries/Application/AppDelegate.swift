@@ -13,5 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var coordinator: CountriesCoordinator?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        guard let window = self.window else { return true }
+        self.coordinator = CountriesCoordinator(window: window)
+        self.coordinator?.start()
+
+        return true
+    }
 }
 
