@@ -8,10 +8,6 @@
 
 import RxSwift
 
-enum MappingError {
-
-}
-
 class CountryServiceImp: CountryService {
 
     private let api: APIComponent

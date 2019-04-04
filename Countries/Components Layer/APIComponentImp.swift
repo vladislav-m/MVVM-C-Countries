@@ -11,6 +11,7 @@ import Moya
 
 class APIComponentImp: APIComponent {
     private var provider: MoyaProvider<APIRequest>
+    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
 
     init(provider: MoyaProvider<APIRequest>) {
         self.provider = provider
@@ -18,6 +19,7 @@ class APIComponentImp: APIComponent {
 
     func getData(for request: APIRequest) -> Single<Data> {
         return self.provider.rx.request(request)
+            .subscribeOn(self.backgroundScheduler)
             .filterSuccessfulStatusAndRedirectCodes()
             .map { $0.data }
     }
