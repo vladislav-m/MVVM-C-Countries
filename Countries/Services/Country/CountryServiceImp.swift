@@ -15,6 +15,7 @@ enum MappingError {
 class CountryServiceImp: CountryService {
 
     private let api: APIComponent
+    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
 
     init(api: APIComponent) {
         self.api = api
@@ -22,6 +23,7 @@ class CountryServiceImp: CountryService {
 
     func fetchCountry(code: String) -> Single<Country> {
         return self.api.getData(for: .country(code: code))
+            .observeOn(self.backgroundScheduler)
             .map { try JSONDecoder().decode(Country.self, from: $0) }
     }
 }

@@ -11,6 +11,7 @@ import RxSwift
 class CountriesServiceImp: CountriesService {
 
     private let api: APIComponent
+    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
 
     init(api: APIComponent) {
         self.api = api
@@ -18,6 +19,7 @@ class CountriesServiceImp: CountriesService {
 
     func countries() -> Single<[Country]> {
         return self.api.getData(for: .countriesList)
+            .observeOn(self.backgroundScheduler)
             .map { try JSONDecoder().decode([Country].self, from: $0) }
     }
 }
