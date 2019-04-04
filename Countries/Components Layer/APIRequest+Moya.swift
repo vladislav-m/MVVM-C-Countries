@@ -53,6 +53,7 @@ extension APIRequest: TargetType {
     }
 
     var headers: [String : String]? {
-        return nil
+        // to expose errors handling we need to switch off api caching mechanism
+        return ["cache-control": "no-cache"]
     }
 }

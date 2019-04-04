@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftExt
 
 class CountryViewModelImp: CountryViewModel {
     
@@ -20,6 +21,8 @@ class CountryViewModelImp: CountryViewModel {
     var capitalName: Driver<String?>
     var neighbours: Driver<String?>
     var currencies: Driver<String?>
+    var isLoading: Driver<Bool>
+    var errors: Driver<Error>
 
     init(countryCode: CountryCode, countryService: CountryService) {
         self.countryService = countryService
@@ -29,17 +32,41 @@ class CountryViewModelImp: CountryViewModel {
                                      capitalName: nil,
                                      neighbours: nil,
                                      currencies: nil)
-        let request = countryService.fetchCountry(code: countryCode).asDriver(onErrorJustReturn: defaultCountry)
-        self.code = request.map { $0.code }
-        self.name = request.map { $0.name }
-        self.population = request.map { $0.code }
-        self.capitalName = request.map { $0.capitalName }
+        let request = countryService.fetchCountry(code: countryCode)
+            .asObservable()
+            .materialize()
+            .share()
+        self.code = request.elements()
+            .map { $0.code }
+            .asDriver(onErrorJustReturn: defaultCountry.code)
+        self.name = request.elements()
+            .map { $0.name }
+            .asDriver(onErrorJustReturn: defaultCountry.name)
+        self.population = request.elements()
+            .map { String($0.population) }
+            .asDriver(onErrorJustReturn: String(defaultCountry.population))
+        self.capitalName = request.elements()
+            .map { $0.capitalName }
+            .asDriver(onErrorJustReturn: nil)
 
-        self.neighbours = request.map { $0.neighbours?.joined(separator: ", ") }
-        self.currencies = request.map {
-            $0.currencies?
-            .compactMap { $0.name }
-            .joined(separator: ", ")
-        }
+        self.neighbours = request.elements()
+            .map { $0.neighbours?.joined(separator: ", ") }
+            .asDriver(onErrorJustReturn: nil)
+        self.currencies = request.elements()
+            .map {
+                $0.currencies?
+                    .compactMap { $0.name }
+                    .joined(separator: ", ")
+            }
+            .asDriver(onErrorJustReturn: nil)
+
+        self.isLoading = request.map { _ in false }
+            .asObservable()
+            .startWith(true)
+            .asDriver(onErrorJustReturn: false)
+
+        self.errors = request.errors()
+                        .asDriver(onErrorJustReturn: NSError(domain: "", code: 0, userInfo: nil))
     }
+
 }
