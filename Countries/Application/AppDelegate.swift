@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Dip
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var coordinator: CountriesCoordinator?
+    let container = DependencyContainer(configBlock: configureContainer)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         guard let window = self.window else { return true }
-        self.coordinator = CountriesCoordinator(window: window)
-        self.coordinator?.start()
+        self.coordinator = try? self.container.resolve()
+        self.coordinator?.start(on: window)
 
         return true
     }
