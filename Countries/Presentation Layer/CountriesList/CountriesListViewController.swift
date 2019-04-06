@@ -39,7 +39,7 @@ class CountriesListViewController: UIViewController {
         let countrySelected = self.tableView.rx.modelSelected(CountryCellViewModel.self).asDriver()
         let output = self.viewModel?.transform(input: CountriesInput(countrySelected: countrySelected, refresh: refreshControl.rx.controlEvent(.valueChanged).asDriver()))
 
-        let itemsBinder: ItemsBinder = self.tableView.rx.items(cellIdentifier: "CountryCell",
+        let itemsBinder: ItemsBinder = self.tableView.rx.items(cellIdentifier: R.reuseIdentifier.countryCell.identifier,
                                                                cellType: CountryCell.self)
         output?.countriesList.asObservable()
             .bind(to: itemsBinder) { index, model, cell in
