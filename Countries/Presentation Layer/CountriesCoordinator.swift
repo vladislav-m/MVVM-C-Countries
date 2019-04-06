@@ -33,9 +33,8 @@ class CountriesCoordinator {
     // MARK: - Public and internal methods
 
     func start(on window: UIWindow) {
-        guard let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
-            as? CountriesListViewController  else {
-                return
+        guard let viewController = R.storyboard.main.instantiateInitialViewController() else {
+            return
         }
 
         let countryObserver = AnyObserver<CountryCode> { event in
@@ -52,10 +51,8 @@ class CountriesCoordinator {
     }
 
     func openCountry(code: CountryCode) {
-        guard let viewController = UIStoryboard.init(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "CountryViewController")
-            as? CountryViewController  else {
-                return
+        guard let viewController = R.storyboard.main.countryViewController() else {
+            return
         }
         
         let viewModel = CountryViewModelImp(countryCode: code, countryService: countryService)

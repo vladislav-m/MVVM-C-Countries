@@ -11,6 +11,7 @@ target 'Countries' do
   pod 'RxCocoa'
   pod 'RxSwiftExt'
   pod 'Dip'
+  pod 'R.swift'
 
   target 'CountriesTests' do
     inherit! :search_paths
