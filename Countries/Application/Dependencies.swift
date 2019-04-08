@@ -20,7 +20,11 @@ func configureContainer(rootContainer: DependencyContainer) {
         CountryServiceImp(api: $0) as CountryService
     }
 
+    rootContainer.register(.singleton) {
+        CountriesModuleFactoryImp(countriesService: $0, countryService: $1) as CountriesModuleFactory
+    }
+
     rootContainer.register(.unique) {
-        CountriesCoordinator(countriesService: $0, countryService: $1)
+        CountriesCoordinator(modulesFactory: $0)
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		52007D112258C9BE002BD0C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52007D102258C9BE002BD0C4 /* R.generated.swift */; };
+		52007D13225A1A20002BD0C4 /* CountriesModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52007D12225A1A20002BD0C4 /* CountriesModuleFactory.swift */; };
+		52007D15225A1D10002BD0C4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52007D14225A1D10002BD0C4 /* Module.swift */; };
+		52007D17225A245C002BD0C4 /* CountriesModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52007D16225A245C002BD0C4 /* CountriesModuleFactoryImp.swift */; };
 		524933942253929300AC198C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933932253929300AC198C /* AppDelegate.swift */; };
 		524933992253929400AC198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524933972253929400AC198C /* Main.storyboard */; };
 		5249339B2253929500AC198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5249339A2253929500AC198C /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		37FE21B71D0EC485DE855961 /* Pods_CountriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CD814A44D88FB2FE4D8E17 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		52007D102258C9BE002BD0C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		52007D12225A1A20002BD0C4 /* CountriesModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModuleFactory.swift; sourceTree = "<group>"; };
+		52007D14225A1D10002BD0C4 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		52007D16225A245C002BD0C4 /* CountriesModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModuleFactoryImp.swift; sourceTree = "<group>"; };
 		524933902253929300AC198C /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524933932253929300AC198C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524933982253929400AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				524933D42255371100AC198C /* CountriesList */,
 				524933972253929400AC198C /* Main.storyboard */,
 				52DF71392256286100AE3432 /* CountriesCoordinator.swift */,
+				52007D12225A1A20002BD0C4 /* CountriesModuleFactory.swift */,
+				52007D16225A245C002BD0C4 /* CountriesModuleFactoryImp.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				5254325B225666CF006743B2 /* UIViewController+Errors.swift */,
+				52007D14225A1D10002BD0C4 /* Module.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -500,7 +509,9 @@
 				524933B72254F76F00AC198C /* CountriesService.swift in Sources */,
 				524933CF2255214D00AC198C /* Country+Codable.swift in Sources */,
 				524933CD2255175E00AC198C /* APIComponentImp.swift in Sources */,
+				52007D17225A245C002BD0C4 /* CountriesModuleFactoryImp.swift in Sources */,
 				5254325C225666CF006743B2 /* UIViewController+Errors.swift in Sources */,
+				52007D13225A1A20002BD0C4 /* CountriesModuleFactory.swift in Sources */,
 				524933C02254FF0B00AC198C /* CountryServiceImp.swift in Sources */,
 				524933BC2254F82F00AC198C /* Country.swift in Sources */,
 				524933D1225525FF00AC198C /* Currency.swift in Sources */,
@@ -513,6 +524,7 @@
 				52DF714322563E0500AE3432 /* CountryViewController.swift in Sources */,
 				52DF713A2256286100AE3432 /* CountriesCoordinator.swift in Sources */,
 				524933C92255057200AC198C /* APIRequest.swift in Sources */,
+				52007D15225A1D10002BD0C4 /* Module.swift in Sources */,
 				524933DA225539E900AC198C /* CountryCellViewModel.swift in Sources */,
 				524933CB225505B500AC198C /* APIRequest+Moya.swift in Sources */,
 				52DF714122563AC000AE3432 /* CountryViewModelImp.swift in Sources */,

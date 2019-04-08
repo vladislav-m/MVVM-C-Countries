@@ -20,43 +20,33 @@ class CountriesCoordinator {
 
     // MARK: - Dependencies
 
-    private let countriesService: CountriesService
-    private let countryService: CountryService
+    private let modulesFactory: CountriesModuleFactory
 
     // MARK: - Lifecycle
 
-    init(countriesService: CountriesService, countryService: CountryService) {
-        self.countriesService = countriesService
-        self.countryService = countryService
+    init(modulesFactory: CountriesModuleFactory) {
+        self.modulesFactory = modulesFactory
     }
 
     // MARK: - Public and internal methods
 
     func start(on window: UIWindow) {
-        guard let viewController = R.storyboard.main.instantiateInitialViewController() else {
-            return
-        }
-
         let countryObserver = AnyObserver<CountryCode> { event in
             if case let .next(countryCode) = event {
                 self.openCountry(code: countryCode)
             }
         }
-        let viewModel = CountriesListViewModelImp(countriesService: countriesService, countryObserver: countryObserver)
-        viewController.viewModel = viewModel
 
-        self.navigationController = UINavigationController(rootViewController: viewController)
+        guard let module = self.modulesFactory.countriesListModule(selectionObserver: countryObserver) else {
+            return
+        }
+        self.navigationController = UINavigationController(rootViewController: module.view)
 
         window.rootViewController = self.navigationController
     }
 
     func openCountry(code: CountryCode) {
-        guard let viewController = R.storyboard.main.countryViewController() else {
-            return
-        }
-        
-        let viewModel = CountryViewModelImp(countryCode: code, countryService: countryService)
-        viewController.viewModel = viewModel
-        self.navigationController?.pushViewController(viewController, animated: true)
+        guard let module = self.modulesFactory.countryModule(code: code) else { return }
+        self.navigationController?.pushViewController(module.view, animated: true)
     }
 }
