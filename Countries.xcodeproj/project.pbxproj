@@ -15,7 +15,6 @@
 		524933992253929400AC198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524933972253929400AC198C /* Main.storyboard */; };
 		5249339B2253929500AC198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5249339A2253929500AC198C /* Assets.xcassets */; };
 		5249339E2253929500AC198C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5249339C2253929500AC198C /* LaunchScreen.storyboard */; };
-		524933A92253929500AC198C /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933A82253929500AC198C /* CountriesTests.swift */; };
 		524933B72254F76F00AC198C /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933B62254F76F00AC198C /* CountriesService.swift */; };
 		524933B92254F77A00AC198C /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933B82254F77A00AC198C /* CountryService.swift */; };
 		524933BC2254F82F00AC198C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524933BB2254F82F00AC198C /* Country.swift */; };
@@ -67,7 +66,6 @@
 		5249339D2253929500AC198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5249339F2253929500AC198C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524933A42253929500AC198C /* CountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		524933A82253929500AC198C /* CountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTests.swift; sourceTree = "<group>"; };
 		524933AA2253929500AC198C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524933B62254F76F00AC198C /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		524933B82254F77A00AC198C /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		524933A72253929500AC198C /* CountriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				524933A82253929500AC198C /* CountriesTests.swift */,
 				524933AA2253929500AC198C /* Info.plist */,
 			);
 			path = CountriesTests;
@@ -538,7 +535,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524933A92253929500AC198C /* CountriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
